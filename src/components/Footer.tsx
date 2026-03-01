@@ -3,10 +3,10 @@ const Footer = () => {
     <footer className="py-8 border-t border-border">
       <div className="container mx-auto px-6 text-center">
         <p className="font-heading text-xl font-bold text-gradient mb-2">
-          Prosdent
+          Dr. Andres Mauricio Corral García
         </p>
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Prosdent Clínica Odontológica. Todos los
+          © 2026 Dr. Andres Mauricio Corral García. Todos los
           derechos reservados.
         </p>
       </div>

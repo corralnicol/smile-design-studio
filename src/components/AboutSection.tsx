@@ -23,7 +23,7 @@ const AboutSection = () => {
               Sobre nosotros
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-              Dr. Prosdent
+              Dr. Andres Mauricio Corral García
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Odontólogo clínico egresado de la{" "}
