@@ -11,6 +11,7 @@ import {
   Heart,
   ChevronDown,
   ChevronUp,
+  ChevronRight,
 } from "lucide-react";
 import { services } from "@/data/services";
 
@@ -27,9 +28,15 @@ const iconMap: Record<string, React.ElementType> = {
 
 const ServicesSection = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedSub, setExpandedSub] = useState<string | null>(null);
 
   const toggle = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
+    setExpandedSub(null);
+  };
+
+  const toggleSub = (key: string) => {
+    setExpandedSub(expandedSub === key ? null : key);
   };
 
   return (
@@ -103,19 +110,46 @@ const ServicesSection = () => {
                           {service.description}
                         </p>
                         <div className="space-y-2">
-                          {service.subServices.map((sub, j) => (
-                            <div
-                              key={j}
-                              className="flex items-center gap-3 py-2 px-3 rounded-lg bg-secondary/40 text-sm"
-                            >
-                              <span className="text-primary font-mono font-medium text-xs w-10 flex-shrink-0">
-                                {sub.code}
-                              </span>
-                              <span className="text-secondary-foreground">
-                                {sub.name}
-                              </span>
-                            </div>
-                          ))}
+                          {service.subServices.map((sub, j) => {
+                            const subKey = `${service.id}-${j}`;
+                            const isSubExpanded = expandedSub === subKey;
+
+                            return (
+                              <div key={j}>
+                                <button
+                                  onClick={() => toggleSub(subKey)}
+                                  className="w-full flex items-center gap-3 py-2 px-3 rounded-lg bg-secondary/40 text-sm hover:bg-secondary/60 transition-colors"
+                                >
+                                  <ChevronRight
+                                    className={`w-4 h-4 text-primary flex-shrink-0 transition-transform duration-200 ${
+                                      isSubExpanded ? "rotate-90" : ""
+                                    }`}
+                                  />
+                                  <span className="text-primary font-mono font-medium text-xs w-10 flex-shrink-0">
+                                    {sub.code}
+                                  </span>
+                                  <span className="text-secondary-foreground text-left flex-1">
+                                    {sub.name}
+                                  </span>
+                                </button>
+                                <AnimatePresence>
+                                  {isSubExpanded && (
+                                    <motion.div
+                                      initial={{ height: 0, opacity: 0 }}
+                                      animate={{ height: "auto", opacity: 1 }}
+                                      exit={{ height: 0, opacity: 0 }}
+                                      transition={{ duration: 0.2 }}
+                                      className="overflow-hidden"
+                                    >
+                                      <p className="text-muted-foreground text-xs leading-relaxed py-2 px-10 bg-secondary/20 rounded-b-lg">
+                                        {sub.detail}
+                                      </p>
+                                    </motion.div>
+                                  )}
+                                </AnimatePresence>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
                     </motion.div>
