@@ -20,7 +20,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-primary font-medium tracking-widest uppercase text-sm mb-3">
-              Sobre nosotros
+              Sobre mí
             </p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
               Dr. Andres Mauricio Corral García

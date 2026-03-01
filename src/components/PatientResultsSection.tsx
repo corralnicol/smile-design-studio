@@ -21,10 +21,10 @@ const PatientResultsSection = () => {
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Algunos Resultados de{" "}
-            <span className="text-gradient">Nuestros Pacientes</span>
+            <span className="text-gradient">Mis Pacientes</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Casos reales que reflejan nuestro compromiso con la excelencia y la transformación de sonrisas.
+            Casos reales que reflejan mi compromiso con la excelencia y la transformación de sonrisas.
           </p>
         </motion.div>
 

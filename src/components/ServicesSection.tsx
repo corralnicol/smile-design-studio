@@ -52,7 +52,7 @@ const ServicesSection = () => {
             Portafolio
           </p>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-            Nuestros <span className="text-gradient">Servicios</span>
+            Mis <span className="text-gradient">Servicios</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Un amplio portafolio de servicios multidisciplinarios que abarca
@@ -121,9 +121,8 @@ const ServicesSection = () => {
                                   className="w-full flex items-center gap-3 py-2 px-3 rounded-lg bg-secondary/40 text-sm hover:bg-secondary/60 transition-colors"
                                 >
                                   <ChevronRight
-                                    className={`w-4 h-4 text-primary flex-shrink-0 transition-transform duration-200 ${
-                                      isSubExpanded ? "rotate-90" : ""
-                                    }`}
+                                    className={`w-4 h-4 text-primary flex-shrink-0 transition-transform duration-200 ${isSubExpanded ? "rotate-90" : ""
+                                      }`}
                                   />
                                   <span className="text-primary font-mono font-medium text-xs w-10 flex-shrink-0">
                                     {sub.code}

@@ -18,7 +18,7 @@ const ContactSection = () => {
             Agenda tu <span className="text-gradient">Cita</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Permítenos ser parte de tu felicidad. Contáctanos y da el primer
+            Permíteme ser parte de tu felicidad. Contáctame y da el primer
             paso hacia la sonrisa que siempre soñaste.
           </p>
         </motion.div>
@@ -28,14 +28,16 @@ const ContactSection = () => {
             {
               icon: Phone,
               title: "Teléfono",
-              detail: "Llámanos para agendar",
+              detail: "Llámame para agendar",
               action: "Llamar ahora",
+              href: "tel:+573183364921",
             },
             {
               icon: MessageCircle,
               title: "WhatsApp",
-              detail: "Escríbenos directamente",
+              detail: "Escríbeme directamente",
               action: "Enviar mensaje",
+              href: "https://wa.me/573183364921",
             },
             {
               icon: Clock,
@@ -60,9 +62,12 @@ const ContactSection = () => {
                 {item.detail}
               </p>
               {item.action && (
-                <button className="bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+                <a
+                  href={item.href}
+                  className="inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+                >
                   {item.action}
-                </button>
+                </a>
               )}
             </motion.div>
           ))}
