@@ -28,15 +28,11 @@ const VideoSection = () => {
           className="max-w-4xl mx-auto"
         >
           <div className="glass-card rounded-2xl overflow-hidden">
-            <video
-              controls
-              className="w-full aspect-video"
-              poster=""
-              preload="metadata"
-            >
-              <source src="/demo.mp4" type="video/mp4" />
-              Tu navegador no soporta la reproducción de video.
-            </video>
+            <img
+              src="demo.gif"
+              alt="Diseño de sonrisa en porcelana y resina"
+              className="w-full aspect-video object-cover"
+            />
           </div>
         </motion.div>
       </div>
